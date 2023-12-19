@@ -24,6 +24,7 @@ class Ready(commands.Cog):
         bot_enabled = True
         server_thread = threading.Thread(target=self.start_minecraft_server)
         server_thread.start()
+        await self.bot.change_presence(activity=discord.Game(name="Minecraft Server"))
         await channel.send("Crafty Cookiebot is ready!")
 
     
